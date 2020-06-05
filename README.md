@@ -239,11 +239,8 @@ Byte 3:N Type 3 - Type of FCS
 
 # Add to a Project
 Follow these steps, to build this repository into a project:
-1. Copy the obmc-phosphor-image.bbappend from /home/boyer/ on the OpenBMC build server into the recipes-phosphor/images/ directory of the project.
-2. Copy the foxconn-oem-ipmi_git.bb from /home/boyer into the recipes-phoshpor/ipmi/ directory of the project.
-3. Attempt to clone the foxconn-oem-ipmi repository on the build machine to register known_hosts.
-4. Register the SSH key of the build machine with your Gitlab account settings.
-5. Attempt to build the project, if it completes, then change SRCREV in foxconn-oem-ipmi_git.bb to the commit SHA of the common-dev branch revision to build.
+1. For meta-foxconn projects, the foxconn-oem-ipmi.bb recipe should be in the meta-foxconn/recipes-phosphor/ipmi/ directory.
+2. For project customizations of the repository add foxconn-oem-ipmi_git.bbappend and foxconn-oem-ipmi directory to the project meta layer recipes-phosphor/ipmi/.
 
 Note: Step 3 can be skipped if the Gitlab server is already a known host of the build machine user.
 
